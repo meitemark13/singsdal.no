@@ -80,26 +80,6 @@
       color: var(--ink);
       border-color: var(--ink);
     }
-  
-    .article-epigraph {
-      text-align: center;
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.8;
-      margin: 0 auto 2.5rem;
-      max-width: 42ch;
-    }
-  
-    .article-epigraph cite {
-      display: block;
-      text-align: right;
-      font-style: normal;
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin-top: 0.75rem;
-    }
 
     /* ── Brødtekst ── */
 
@@ -137,8 +117,8 @@
     .article-img {
       display: block;
       margin: 2.5rem auto;
-      max-width: 600px;
-      width: 100%;
+      max-width: 320px;
+      width: 60%;
     }
 
     .article-img.wide {
@@ -147,8 +127,8 @@
     }
 
     .article-img.narrow {
-      max-width: 300px;
-      width: 50%;
+      max-width: 220px;
+      width: 40%;
     }
 
     /* Sort bakgrunn ser bra ut mot den varme siden */
@@ -166,15 +146,17 @@
 </head>
 <body>
 
-  <nav>
-    <a class="nav-name" href="../index.html">Arkitekt Ola Singsdal</a>
-    <ul class="nav-links">
-      <li><a href="../prosjekter.html">Prosjekter</a></li>
-      <li><a href="../tekster.html" class="active">Tekster</a></li>
-      <li><a href="../tegninger.html">Tegninger</a></li>
-      <li><a href="../trearbeid.html">Trearbeid</a></li>
-      <li><a href="../om.html">Om</a></li>
-    </ul>
+      <nav class="site-nav" id="sitenav">
+    <div class="site-nav-inner">
+      <a class="nav-name" href="../index.html">Arkitekt Ola Singsdal</a>
+      <ul class="nav-links">
+        <li><a href="../prosjekter.html">Prosjekter</a></li>
+        <li><a href="../tekster.html" class="active">Tekster</a></li>
+        <li><a href="../tegninger.html">Tegninger</a></li>
+        <li><a href="../trearbeid.html">Trearbeid</a></li>
+        <li><a href="../om.html">Om</a></li>
+      </ul>
+    </div>
   </nav>
 
   <div class="article-header">
@@ -187,17 +169,7 @@
 
   <div class="article-body">
 
-    <figure class="article-img">
-      <img src="../img/Spissestov.png" alt="Spissespon fra fargeblyanter" />
-    </figure>
-    
-    <blockquote class="article-epigraph">
-      «Could I interest you in everything, all of the time?<br />
-      A little bit of everything, all of the time?<br />
-      Apathy is a tragedy, and boredom is a crime,<br />
-      Anything and everything, all of the time!»
-      <cite>— Bo Burnham, «Welcome to the Internet»</cite>
-    </blockquote>
+    <p>«Could I interest you in everything, all of the time? / A little bit of everything, all of the time? / Apathy is a tragedy, and boredom is a crime, / Anything and everything, all of the time!» — Bo Burnham, «Welcome to the Internet»</p>
 
     <p>«Millom bakkar og berg ut med havet, heve nordmannen endelig fått installert fiber og 5G fra Telenor». Det er over 160 år siden Ivar Aasen skrev diktet «Nordmannen». Mye har skjedd i samfunnet vårt siden den gang. Norge er ikke lenger en værbitt utpost langt unna alt, men midt i verden, som alle andre steder. Hva vi bedriver i den virkelige verden blir raskt enten sekundært eller totalt avhengig av hva som foregår på de digitale plattformene. Selv smelteverk og renovasjonsselskap har hver sin omdømmespesialist og SoMe-manager, og suksess måles i engasjement og klikk. Oppmerksomhet er valutaen, og kampen om den blir stadig mer spisset. Internasjonale selskaper innoverer hele tiden, og oppdager stadig vekk nye formater for å gjøre oss enda mer avhengige av den konstante strømmen med distraksjoner.</p>
 
@@ -220,7 +192,7 @@
     <p>Men, noen ganger, så hender det at jeg opplever å bli virkelig grepet av arbeidet mitt. Mulig det er den mye omtalte «flytsonen» det er snakk om. Det skjer nesten aldri når jeg sitter foran PCen, men heller når jeg foretar meg noe fysisk. En gang tidligere i år satt jeg og spisset noen blyanter med en tapetkniv, da jeg med ett ble oppmerksom på at jeg var helt alene i hodet mitt, sammen med blyantene og kniven.</p>
 
     <figure class="article-img">
-      <img src="../img/Blyanten.png" alt="En spisset fargeblyant med mosegrønn pigmentkjerne" />
+      <img src="../img/blyanten.png" alt="En spisset fargeblyant med mosegrønn pigmentkjerne" />
     </figure>
 
     <p>I venstre hånd holder jeg en fargeblyant. Den er så lang en blyant er etter å ha blitt spisset to eller tre ganger, den har en glatt overflate, og pigmentet har en dus mosegrønn farge. Den er en av flere blyanter jeg trenger å spisse fordi jeg har brukt den en del, og jeg har brukt den en del fordi den har samme farge som gresset jeg fargelegger, i landskapet som jeg tegner fordi jeg var lei av å ikke klare å begynne å skrive.</p>
@@ -232,15 +204,15 @@
     <p>Alle disse avanserte og nøye artikulerte operasjonene foregår med en form for innarbeidet automatikk. Ikke i den betydningen at de foregår utenfor min bevissthet, sjelløst, i en bestemt maskinell rekkefølge, men i den betydning at fingrenes komplekse bevegelser som helhet, og med dens tusen mulige variasjoner, konstant tilpasser seg informasjonen jeg tar inn, gjennom hva øynene mine ser, hva fingrene mine føler, hva ørene mine hører. Jeg ville aldri klart å presist beskrive det dynamiske samspillet mellom hvert utførende ledd i kroppen min, fra sittestillingen og holdningen til ryggens bevegelser til skuldrene, fra skuldrene mine og ned gjennom armene helt ned til hver enkelt finger. Hvordan kan jeg sette ord på eksakt hvor hardt lillefingeren krummer seg rundt enden av blyanten, eller hvordan armenes eksakte posisjoner og anstrengelser endrer seg gjennom den dynamiske bevegelsen, og konstant tilpasses de varierende omstendighetene i spikke-bevegelsen.</p>
 
     <figure class="article-img">
-      <img src="../img/Kniven.png" alt="En tapetkniv med bladet trukket ut" />
+      <img src="../img/kniven.png" alt="En tapetkniv med åpent blad" />
     </figure>
 
     <p>Enden av knivbladet er fingerspissen min, og gjennom verktøyet føler jeg retningen på trefibrene, hardheten og glattheten i pigmentkjernen, og de små variasjonene i motstand i overgangen fra et materiale til et annet. Fristilt fra ord og språk formuleres det krystallklare tanker med utgangspunkt i informasjonen fra samspillet mellom hode og hender. Tankene blir til intensjoner, og foran meg former intensjonene et objekt i den fysiske verden.</p>
 
     <p>Jeg er klar over at kanskje ikke alle vil ha den nøyaktig samme opplevelsen av å spisse en blyant som den jeg nå har beskrevet. I den grad nordmenn i dag fortsatt skriver for hånd, bruker vi gjerne penner i stedet for blyanter, og de som bruker blyanter spisser dem gjerne med en blyantspisser. Men jeg vil påstå at forskjellen på det å bruke en blyantspisser og det å spisse en blyant med en kniv, hinter mot noe vesentlig ved vårt forhold til objektene rundt oss.</p>
 
-    <figure class="article-img">
-      <img src="../img/Blyantspisseren.png" alt="En rød blyantspisser med lokket åpent" />
+    <figure class="article-img narrow">
+      <img src="../img/blyantspisseren.png" alt="En rød blyantspisser med lokket åpent" />
     </figure>
 
     <p>En moderne blyantspisser er på mange måter en «black box», et lukket system hvor man bare kan observere input og output, uten å få direkte tilbakemelding om den indre prosessen. Man fører blyanten inn i spisserens hull, roterer blyanten noen ganger, og trekker den ut for å vurdere resultatet. Er blyanten blitt spiss nok? Har tuppen brukket? Da får du putte den inn igjen, og spisse litt til. Det kan være vanskelig å bedømme når du står der og kverner. Kun ved å avbryte prosessen kan du observere resultatet.</p>
@@ -249,10 +221,6 @@
 
     <p>Det første problemet er standardiseringen av prosessen. Selv i sin enkle utforming og virkemåte, tar blyantspisseren en hel rekke valg for oss. Uten at vi er klar over det, bestemmer den hva spissens geometri skal være, og hvordan tuppen skal være formet. Blyantspisseren stiller oss ingen spørsmål, den gir ingen tilbakemelding. Den er hensiktsmessig utformet av en produktdesigner for mange år siden, for å produsere et forutsigbart og repeterbart resultat. Den spisser blyanten til du slutter å vri, og da har spissen den formen den har. Brukeren tar formen for gitt, og den maskinelt spissede blyanten danner grunnlaget for ditt mentale bilde av hva en spisset blyant er, og hvordan den skal se ut.</p>
 
-    <figure class="article-img">
-      <img src="../img/Den spissede blyanten.png" alt="En spisset fargeblyant med mosegrønn pigmentkjerne" />
-    </figure>
-    
     <p>En kveld setter en uerfaren arkitektstudent seg ned foran PCen, og begynner å tegne en bolig i et moderne CAD-program. I det øyeblikk veggene dukker opp på skjermen er de allerede 350 mm tykke og 2800 mm høye og hvite. Det er en ferdig isolert bindingsverksvegg med dobbel gipsplate på hver side, ferdig med teknisk deklarasjon, brannmotstand og U-verdi. Studenten er ikke klar over hvilke tanker maskinen har tenkt, alle valgene som i det øyeblikket ble tatt.</p>
 
     <p>Til sammenlikning, så vil den arkaiske håndtegningen aldri tilføre noen informasjon uten ditt samtykke. Hver eneste vinglete, upresise strek er nøyaktig der den er fordi <em>du</em> plasserte den der selv, med en villet bevegelse. Hver enkelt linje er en påstand, en liten del av en tenkt virkelighet, som igjen fremprovoserer nye spørsmål, og driver tankeprosessen videre. Det er studenten og blyanten i samspill som formulerer tankene, og tvinges til å ta valgene.</p>
@@ -277,9 +245,13 @@
 
     <p>I det moderne samfunnet er vi i større og større grad skjermet fra disse konfrontasjonene. Vi har vent oss til at alt har en utløpsdato. Vi lærer at biler, telefoner og hus blir ikke vanskjøttet, de eldes, og når uunngåelig slutten av sin tilmålte levetid. De er produsert på en måte som tilslører og kompliserer mekanismene og prinsippene som de opererer under, og vanskeliggjør vedlikehold og reparasjon. Men ingenting går i stykker helt av seg selv, uten en ytre påvirkning. Det vesentlige ligger i å dyrke den barnlige nysgjerrigheten og undringen. «Hva skjedde egentlig nå? Hvilken serie hendelser ledet til dette resultatet? Er det mulig at jeg har tenkt feil hele tiden?»</p>
 
+    <figure class="article-img">
+      <img src="../img/spissestov.png" alt="Spissespon fra fargeblyanter" />
+    </figure>
+
     <p>Den sløve kniven er et bilde på hvordan vi forholder oss til omgivelsene våre, hva vi velger å se, og hva vi velger å ignorere. Som menneskene i livet vårt, er objektene rundt oss komplekse. De er ikke stumme statiske gjenstander, men dynamiske aktører i livene våre, og hvor mye vi lærer om dem avhenger av hvor mye vi velger å lytte. De endrer seg med oss, og forteller oss på forskjellige måter hvordan de liker, og ikke liker å bli behandlet. Uvitenhet er ingen synd, synden er å se at noe er galt, og så velge å ikke gjøre noe med det.</p>
 
-    <p>Så reparer den takrenna. Gå til skomakeren, sy den lomma med hull i.<br />Og spiss blyanten med kniv.</p>
+    <p class="article-coda">Så reparer den takrenna. Gå til skomakeren, sy den lomma med hull i.<br />Og spiss blyanten med kniv.</p>
 
   </div>
 
@@ -288,5 +260,6 @@
     <p>Oppdatert 2025</p>
   </footer>
 
+  <script src="../js/main.js"></script>
 </body>
 </html>
