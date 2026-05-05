@@ -10,8 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* ── Forside-spesifikk layout ── */
-
     .hero {
       padding: 3.5rem var(--col) 3rem;
       max-width: var(--max);
@@ -25,10 +23,7 @@
       font-weight: 400;
       line-height: 1.45;
       max-width: 28ch;
-      color: var(--ink);
     }
-
-    /* Redaksjonelt grid */
 
     .editorial {
       padding: 0 var(--col) 5rem;
@@ -46,30 +41,14 @@
       padding-top: 2rem;
     }
 
-    /* Én stor + to små */
     .ed-row.layout-featured {
       grid-template-columns: 1.6fr 1fr;
       grid-template-rows: auto auto;
     }
 
-    .ed-row.layout-featured .ed-featured {
-      grid-row: 1 / 3;
-    }
+    .ed-row.layout-featured .ed-featured { grid-row: 1 / 3; }
 
-    /* To like */
-    .ed-row.layout-pair {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    /* Tre like */
-    .ed-row.layout-trio {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    /* Tekst-rad (ingen bilder) */
-    .ed-row.layout-text {
-      grid-template-columns: 1fr;
-    }
+    .ed-row.layout-text { grid-template-columns: 1fr; }
 
     .ed-category {
       font-size: 0.65rem;
@@ -82,26 +61,10 @@
       align-items: baseline;
     }
 
-    .ed-category a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .ed-category a { color: var(--muted); text-decoration: none; transition: color 0.25s; }
     .ed-category a:hover { color: var(--ink); }
 
-    .ed-category-label { letter-spacing: 0.15em; }
-
-    .ed-all {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-    }
-
-    .ed-item a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+    .ed-item a { text-decoration: none; color: inherit; display: block; }
 
     .ed-img {
       width: 100%;
@@ -117,75 +80,51 @@
     .ed-img img {
       width: 100%; height: 100%;
       object-fit: cover; display: block;
-      transition: opacity 0.3s;
+      filter: grayscale(100%);
+      transition: filter 0.5s var(--ease);
     }
 
-    .ed-item:hover .ed-img img { opacity: 0.85; }
+    .ed-item:hover .ed-img img { filter: grayscale(0%); }
 
     .ed-img.empty {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
     }
 
     .ed-img.empty span {
-      font-family: var(--serif);
-      font-size: 2.5rem;
-      color: var(--muted);
-      opacity: 0.25;
+      font-family: var(--serif); font-size: 2.5rem;
+      color: var(--muted); opacity: 0.25;
     }
 
     .ed-title {
       font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.3;
-      margin-bottom: 0.2rem;
+      font-size: 1rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.2rem;
     }
 
-    .ed-featured .ed-title {
-      font-size: 1.25rem;
-    }
+    .ed-featured .ed-title { font-size: 1.25rem; }
 
-    .ed-meta {
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .ed-meta { font-size: 0.72rem; color: var(--muted); }
 
-    /* Tekst-oppføringer på forsiden */
     .ed-text-list { display: flex; flex-direction: column; }
 
     .ed-text-entry {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
-      color: inherit;
+      display: grid; grid-template-columns: 1fr auto;
+      align-items: baseline; gap: 1rem;
+      padding: 0.85rem 0; border-bottom: 1px solid var(--rule);
+      text-decoration: none; color: inherit;
     }
 
     .ed-text-entry:first-child { border-top: 1px solid var(--rule); }
     .ed-text-entry:hover .ed-text-title { color: var(--accent); }
 
     .ed-text-title {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      transition: color 0.2s;
+      font-family: var(--serif); font-size: 1rem; font-weight: 400;
+      transition: color 0.25s;
     }
 
-    .ed-text-year {
-      font-size: 0.72rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
+    .ed-text-year { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
 
     @media (max-width: 640px) {
-      .ed-row.layout-featured,
-      .ed-row.layout-pair,
-      .ed-row.layout-trio { grid-template-columns: 1fr; }
+      .ed-row.layout-featured { grid-template-columns: 1fr; }
       .ed-row.layout-featured .ed-featured { grid-row: auto; }
     }
   </style>
@@ -203,28 +142,24 @@
     </ul>
   </nav>
 
-  <div class="hero">
+  <div class="hero reveal">
     <p>Arbeid i skjæringspunktet mellom materialitet, form og håndverk.</p>
   </div>
 
   <div class="editorial">
 
-    <!-- Prosjekter: ett stort + ett lite -->
-    <div class="ed-row layout-featured">
+    <div class="ed-row layout-featured reveal" data-delay="100">
       <div class="ed-category" style="grid-column: 1 / -1;">
-        <span class="ed-category-label">Prosjekter</span>
-        <a class="ed-all" href="prosjekter.html">Se alle</a>
+        <span>Prosjekter</span>
+        <a href="prosjekter.html">Se alle</a>
       </div>
-
       <div class="ed-item ed-featured">
         <a href="prosjekter.html">
           <div class="ed-img ratio-portrait empty"><span>·</span></div>
-          <!-- <div class="ed-img ratio-portrait"><img src="img/prosjekt-01.jpg" alt="..." /></div> -->
           <p class="ed-title">Prosjekttittel</p>
           <p class="ed-meta">Sted — 2024</p>
         </a>
       </div>
-
       <div class="ed-item">
         <a href="prosjekter.html">
           <div class="ed-img ratio-landscape empty"><span>·</span></div>
@@ -232,7 +167,6 @@
           <p class="ed-meta">Sted — 2023</p>
         </a>
       </div>
-
       <div class="ed-item">
         <a href="prosjekter.html">
           <div class="ed-img ratio-landscape empty"><span>·</span></div>
@@ -242,13 +176,16 @@
       </div>
     </div>
 
-    <!-- Tekster: liste -->
-    <div class="ed-row layout-text">
+    <div class="ed-row layout-text reveal" data-delay="100">
       <div class="ed-category">
-        <span class="ed-category-label">Tekster</span>
-        <a class="ed-all" href="tekster.html">Se alle</a>
+        <span>Tekster</span>
+        <a href="tekster.html">Se alle</a>
       </div>
       <div class="ed-text-list">
+        <a class="ed-text-entry" href="tekster/blyanten-og-handverket.html">
+          <span class="ed-text-title">Blyanten og håndverket</span>
+          <span class="ed-text-year">2024</span>
+        </a>
         <a class="ed-text-entry" href="tekster.html">
           <span class="ed-text-title">Transformasjon som faglig kategori</span>
           <span class="ed-text-year">2024</span>
@@ -257,20 +194,14 @@
           <span class="ed-text-title">Materialitet og håndverk i ombygging</span>
           <span class="ed-text-year">2023</span>
         </a>
-        <a class="ed-text-entry" href="tekster.html">
-          <span class="ed-text-title">Bygningsarv uten bevaring</span>
-          <span class="ed-text-year">2022</span>
-        </a>
       </div>
     </div>
 
-    <!-- Tegninger: ett stort + tre små -->
-    <div class="ed-row layout-featured">
+    <div class="ed-row layout-featured reveal" data-delay="100">
       <div class="ed-category" style="grid-column: 1 / -1;">
-        <span class="ed-category-label">Tegninger</span>
-        <a class="ed-all" href="tegninger.html">Se alle</a>
+        <span>Tegninger</span>
+        <a href="tegninger.html">Se alle</a>
       </div>
-
       <div class="ed-item ed-featured">
         <a href="tegninger.html">
           <div class="ed-img ratio-portrait">
@@ -280,7 +211,6 @@
           <p class="ed-meta">Blyant og akvarell — 2025</p>
         </a>
       </div>
-
       <div class="ed-item">
         <a href="tegninger.html">
           <div class="ed-img ratio-landscape">
@@ -290,7 +220,6 @@
           <p class="ed-meta">Blekk og fargeblyant — 2025</p>
         </a>
       </div>
-
       <div class="ed-item">
         <a href="tegninger.html">
           <div class="ed-img ratio-landscape">
@@ -302,20 +231,17 @@
       </div>
     </div>
 
-    <!-- Trearbeid -->
-    <div class="ed-row layout-pair">
-      <div>
-        <div class="ed-category">
-          <span class="ed-category-label">Trearbeid</span>
-          <a class="ed-all" href="trearbeid.html">Se alle</a>
-        </div>
-        <div class="ed-item">
-          <a href="trearbeid.html">
-            <div class="ed-img ratio-square empty"><span>·</span></div>
-            <p class="ed-title">Dreiet skål</p>
-            <p class="ed-meta">Bjørk — 2024</p>
-          </a>
-        </div>
+    <div class="ed-row layout-text reveal" data-delay="100">
+      <div class="ed-category">
+        <span>Trearbeid</span>
+        <a href="trearbeid.html">Se alle</a>
+      </div>
+      <div class="ed-item">
+        <a href="trearbeid.html">
+          <div class="ed-img ratio-landscape empty"><span>·</span></div>
+          <p class="ed-title">Dreiet skål</p>
+          <p class="ed-meta">Bjørk — 2024</p>
+        </a>
       </div>
     </div>
 
@@ -326,5 +252,6 @@
     <p>Oppdatert 2025</p>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>

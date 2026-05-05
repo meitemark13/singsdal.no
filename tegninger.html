@@ -8,141 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .gallery-item {
-      cursor: pointer;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: opacity 0.2s;
-    }
-
-    .gallery-item:hover img { opacity: 0.88; }
-
-    .gallery-caption {
-      margin-top: 0.6rem;
-    }
-
-    .gallery-title {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.3;
-    }
-
-    .gallery-meta {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-      margin-top: 0.15rem;
-    }
-
-    /* ── Lightbox ── */
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(30, 26, 22, 0.93);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox.open { display: flex; }
-
-    .lightbox-img-wrap {
-      position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-img-wrap img {
-      max-width: 90vw;
-      max-height: 85vh;
-      width: auto;
-      height: auto;
-      display: block;
-    }
-
-    .lightbox-caption {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: rgba(245, 242, 236, 0.7);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-    }
-
-    .lightbox-caption strong {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 0.9rem;
-      color: rgba(245, 242, 236, 0.9);
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-
-    .lb-close,
-    .lb-prev,
-    .lb-next {
-      position: fixed;
-      background: none;
-      border: none;
-      color: rgba(245, 242, 236, 0.6);
-      cursor: pointer;
-      font-family: var(--sans);
-      font-weight: 300;
-      transition: color 0.2s;
-      padding: 0.5rem;
-    }
-
-    .lb-close:hover,
-    .lb-prev:hover,
-    .lb-next:hover { color: rgba(245, 242, 236, 1); }
-
-    .lb-close {
-      top: 1.5rem;
-      right: 2rem;
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    .lb-prev {
-      left: 1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.8rem;
-    }
-
-    .lb-next {
-      right: 1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.8rem;
-    }
-
-    @media (max-width: 640px) {
-      .gallery { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .lb-prev { left: 0.5rem; }
-      .lb-next { right: 0.5rem; }
-    }
-  </style>
 </head>
 <body>
 
@@ -157,107 +22,104 @@
     </ul>
   </nav>
 
-  <div class="page-header">
+  <div class="page-header reveal">
     <h1>Tegninger</h1>
   </div>
 
   <main>
-    <div class="gallery" id="gallery">
+    <div class="masonry">
 
-      <!-- 2025 -->
-      <div class="gallery-item" data-title="Kontoret 3" data-meta="Blekk og fargeblyant — 2025">
-        <img src="img/kontoret-3-blekk-og-fargeblyant.jpg" alt="Kontoret 3 — blekk og fargeblyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 3</p>
-          <p class="gallery-meta">Blekk og fargeblyant — 2025</p>
+      <div class="masonry-item reveal" data-delay="0" data-lightbox data-title="Kontoret 3" data-meta="Blekk og fargeblyant — 2025">
+        <img class="masonry-item-img" src="img/kontoret-3-blekk-og-fargeblyant.jpg" alt="Kontoret 3 — blekk og fargeblyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 3</p>
+          <p class="masonry-meta">Blekk og fargeblyant — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Kontoret 3" data-meta="Blekk — 2025">
-        <img src="img/kontoret-3-blekk.jpg" alt="Kontoret 3 — blekk" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 3</p>
-          <p class="gallery-meta">Blekk — 2025</p>
+      <div class="masonry-item reveal" data-delay="60" data-lightbox data-title="Kontoret 3" data-meta="Blekk — 2025">
+        <img class="masonry-item-img" src="img/kontoret-3-blekk.jpg" alt="Kontoret 3 — blekk" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 3</p>
+          <p class="masonry-meta">Blekk — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Kontoret 2" data-meta="Blyant og blekk — 2025">
-        <img src="img/kontoret-2-blyant-og-blekk.png" alt="Kontoret 2 — blyant og blekk" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 2</p>
-          <p class="gallery-meta">Blyant og blekk — 2025</p>
+      <div class="masonry-item reveal" data-delay="120" data-lightbox data-title="Kontoret 2" data-meta="Blyant og blekk — 2025">
+        <img class="masonry-item-img" src="img/kontoret-2-blyant-og-blekk.png" alt="Kontoret 2 — blyant og blekk" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 2</p>
+          <p class="masonry-meta">Blyant og blekk — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Kontoret 1" data-meta="Blekk og tusj — 2025">
-        <img src="img/kontoret-1-blekk-og-tusj.jpg" alt="Kontoret 1 — blekk og tusj" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 1</p>
-          <p class="gallery-meta">Blekk og tusj — 2025</p>
+      <div class="masonry-item reveal" data-delay="0" data-lightbox data-title="Kontoret 1" data-meta="Blekk og tusj — 2025">
+        <img class="masonry-item-img" src="img/kontoret-1-blekk-og-tusj.jpg" alt="Kontoret 1 — blekk og tusj" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 1</p>
+          <p class="masonry-meta">Blekk og tusj — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Kontoret 1" data-meta="Blyant — 2025">
-        <img src="img/kontoret-1-blyant.jpg" alt="Kontoret 1 — blyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 1</p>
-          <p class="gallery-meta">Blyant — 2025</p>
+      <div class="masonry-item reveal" data-delay="60" data-lightbox data-title="Kontoret 1" data-meta="Blyant — 2025">
+        <img class="masonry-item-img" src="img/kontoret-1-blyant.jpg" alt="Kontoret 1 — blyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 1</p>
+          <p class="masonry-meta">Blyant — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Kontoret 4" data-meta="Fargeblyant og blekk — 2025">
-        <img src="img/kontoret-4-fargeblyant-og-blekk.jpg" alt="Kontoret 4 — fargeblyant og blekk" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Kontoret 4</p>
-          <p class="gallery-meta">Fargeblyant og blekk — 2025</p>
+      <div class="masonry-item reveal" data-delay="120" data-lightbox data-title="Kontoret 4" data-meta="Fargeblyant og blekk — 2025">
+        <img class="masonry-item-img" src="img/kontoret-4-fargeblyant-og-blekk.jpg" alt="Kontoret 4 — fargeblyant og blekk" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Kontoret 4</p>
+          <p class="masonry-meta">Fargeblyant og blekk — 2025</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Singsdalen" data-meta="Blyant og akvarell — 2025">
-        <img src="img/singsdalen-blyant-og-akvarell.jpg" alt="Singsdalen — blyant og akvarell" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Singsdalen</p>
-          <p class="gallery-meta">Blyant og akvarell — 2025</p>
+      <div class="masonry-item reveal" data-delay="0" data-lightbox data-title="Singsdalen" data-meta="Blyant og akvarell — 2025">
+        <img class="masonry-item-img" src="img/singsdalen-blyant-og-akvarell.jpg" alt="Singsdalen — blyant og akvarell" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Singsdalen</p>
+          <p class="masonry-meta">Blyant og akvarell — 2025</p>
         </div>
       </div>
 
-      <!-- 2024 -->
-      <div class="gallery-item" data-title="Tegnesalen 1" data-meta="Blekk og fargeblyant — 2024">
-        <img src="img/tegnesalen-1-blekk-og-fargeblyant.jpg" alt="Tegnesalen 1 — blekk og fargeblyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Tegnesalen 1</p>
-          <p class="gallery-meta">Blekk og fargeblyant — 2024</p>
+      <div class="masonry-item reveal" data-delay="60" data-lightbox data-title="Tegnesalen 1" data-meta="Blekk og fargeblyant — 2024">
+        <img class="masonry-item-img" src="img/tegnesalen-1-blekk-og-fargeblyant.jpg" alt="Tegnesalen 1 — blekk og fargeblyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Tegnesalen 1</p>
+          <p class="masonry-meta">Blekk og fargeblyant — 2024</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Tegnesalen 2" data-meta="Blyant — 2024">
-        <img src="img/tegnesalen-2.jpg" alt="Tegnesalen 2 — blyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Tegnesalen 2</p>
-          <p class="gallery-meta">Blyant — 2024</p>
+      <div class="masonry-item reveal" data-delay="120" data-lightbox data-title="Tegnesalen 2" data-meta="Blyant — 2024">
+        <img class="masonry-item-img" src="img/tegnesalen-2.jpg" alt="Tegnesalen 2 — blyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Tegnesalen 2</p>
+          <p class="masonry-meta">Blyant — 2024</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="André, konsentert" data-meta="Fargeblyant — 2024">
-        <img src="img/andre-fargeblyant.jpg" alt="André, konsentert — fargeblyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">André, konsentert</p>
-          <p class="gallery-meta">Fargeblyant — 2024</p>
+      <div class="masonry-item reveal" data-delay="0" data-lightbox data-title="André, konsentert" data-meta="Fargeblyant — 2024">
+        <img class="masonry-item-img" src="img/andre-fargeblyant.jpg" alt="André, konsentert — fargeblyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">André, konsentert</p>
+          <p class="masonry-meta">Fargeblyant — 2024</p>
         </div>
       </div>
 
-      <div class="gallery-item" data-title="Februar" data-meta="Fargeblyant — 2024">
-        <img src="img/februar.jpg" alt="Februar — fargeblyant" />
-        <div class="gallery-caption">
-          <p class="gallery-title">Februar</p>
-          <p class="gallery-meta">Fargeblyant — 2024</p>
+      <div class="masonry-item reveal" data-delay="60" data-lightbox data-title="Februar" data-meta="Fargeblyant — 2024">
+        <img class="masonry-item-img" src="img/februar.jpg" alt="Februar — fargeblyant" />
+        <div class="masonry-caption">
+          <p class="masonry-title">Februar</p>
+          <p class="masonry-meta">Fargeblyant — 2024</p>
         </div>
       </div>
 
     </div>
   </main>
 
-  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" id="lb-close">×</button>
     <button class="lb-prev" id="lb-prev">‹</button>
@@ -265,7 +127,7 @@
       <img src="" alt="" id="lb-img" />
     </div>
     <button class="lb-next" id="lb-next">›</button>
-    <div class="lightbox-caption" id="lb-caption">
+    <div class="lightbox-caption">
       <strong id="lb-title"></strong>
       <span id="lb-meta"></span>
     </div>
@@ -276,49 +138,6 @@
     <p>Oppdatert 2025</p>
   </footer>
 
-  <script>
-    const items = Array.from(document.querySelectorAll('.gallery-item'));
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lb-img');
-    const lbTitle = document.getElementById('lb-title');
-    const lbMeta = document.getElementById('lb-meta');
-    let current = 0;
-
-    function open(index) {
-      current = index;
-      const item = items[index];
-      lbImg.src = item.querySelector('img').src;
-      lbImg.alt = item.querySelector('img').alt;
-      lbTitle.textContent = item.dataset.title;
-      lbMeta.textContent = item.dataset.meta;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function close() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function prev() { open((current - 1 + items.length) % items.length); }
-    function next() { open((current + 1) % items.length); }
-
-    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
-    document.getElementById('lb-close').addEventListener('click', close);
-    document.getElementById('lb-prev').addEventListener('click', prev);
-    document.getElementById('lb-next').addEventListener('click', next);
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) close();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
-    });
-  </script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
