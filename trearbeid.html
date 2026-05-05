@@ -10,56 +10,48 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <nav>
-    <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
-    <ul class="nav-links">
-      <li><a href="prosjekter.html">Prosjekter</a></li>
-      <li><a href="tekster.html">Tekster</a></li>
-      <li><a href="tegninger.html">Tegninger</a></li>
-      <li><a href="trearbeid.html" class="active">Trearbeid</a></li>
-      <li><a href="om.html">Om</a></li>
-    </ul>
+  <nav class="site-nav" id="sitenav">
+    <div class="site-nav-inner">
+      <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
+      <ul class="nav-links">
+        <li><a href="prosjekter.html">Prosjekter</a></li>
+        <li><a href="tekster.html">Tekster</a></li>
+        <li><a href="tegninger.html">Tegninger</a></li>
+        <li><a href="trearbeid.html" class="active">Trearbeid</a></li>
+        <li><a href="om.html">Om</a></li>
+      </ul>
+    </div>
   </nav>
-
-  <div class="page-header">
-    <h1>Trearbeid</h1>
-  </div>
-
-  <main>
+  <div class="page-wrap">
+    <div class="page-header reveal"><h1>Trearbeid</h1></div>
     <div class="grid">
-
-      <div class="item">
+      <div class="item reveal" data-delay="0">
         <a href="#">
           <div class="item-img empty"><span>·</span></div>
           <p class="item-title">Dreiet skål</p>
           <p class="item-meta">Bjørk — 2024</p>
         </a>
       </div>
-
-      <div class="item">
+      <div class="item reveal" data-delay="60">
         <a href="#">
           <div class="item-img empty"><span>·</span></div>
           <p class="item-title">Liten boks</p>
           <p class="item-meta">Furu — 2024</p>
         </a>
       </div>
-
-      <div class="item">
+      <div class="item reveal" data-delay="120">
         <a href="#">
           <div class="item-img empty"><span>·</span></div>
           <p class="item-title">Vase</p>
           <p class="item-meta">Furu — 2023</p>
         </a>
       </div>
-
     </div>
-  </main>
-
+  </div>
   <footer>
     <p>Arkitekt Ola Singsdal — singsdal.no</p>
     <p>Oppdatert 2025</p>
   </footer>
-
+  <script src="js/main.js"></script>
 </body>
 </html>

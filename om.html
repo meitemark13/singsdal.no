@@ -10,66 +10,51 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <nav>
-    <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
-    <ul class="nav-links">
-      <li><a href="prosjekter.html">Prosjekter</a></li>
-      <li><a href="tekster.html">Tekster</a></li>
-      <li><a href="tegninger.html">Tegninger</a></li>
-      <li><a href="trearbeid.html">Trearbeid</a></li>
-      <li><a href="om.html" class="active">Om</a></li>
-    </ul>
+  <nav class="site-nav" id="sitenav">
+    <div class="site-nav-inner">
+      <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
+      <ul class="nav-links">
+        <li><a href="prosjekter.html">Prosjekter</a></li>
+        <li><a href="tekster.html">Tekster</a></li>
+        <li><a href="tegninger.html">Tegninger</a></li>
+        <li><a href="trearbeid.html">Trearbeid</a></li>
+        <li><a href="om.html" class="active">Om</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <div class="page-header">
-    <h1>Om</h1>
-  </div>
+  <div class="page-wrap">
+    <div class="page-header reveal"><h1>Om</h1></div>
 
-  <main>
-
-    <div class="about-grid">
+    <div class="about-grid reveal" data-delay="80">
       <div class="about-bio">
-        <p>
-          Som arkitekt er jeg opptatt av materialer, sted og historien vår.  og ofte  
-          Til daglig er jeg tilknyttet NTNU, der jeg koordinerer et videreutdanningsprogram i bygningsvern og restaurering
-          rettet mot håndverkere.
-        </p>
-        <p>
-          Ved siden av det faglige arbeider jeg med tegning og snekring — særlig tredreiing.
-          Disse praksisene henger tett sammen: de handler om å forstå materialer gjennom hendene.
-        </p>
+        <p>Jeg er arkitekt og arbeider med spørsmål om materialitet, håndverk og bygningers forandring over tid. Til daglig er jeg tilknyttet NTNU, der jeg koordinerer et etterutdanningsprogram i bygningsvern og restaurering rettet mot håndverkere.</p>
+        <p>Ved siden av det faglige arbeider jeg med tegning og trearbeid — særlig dreierarbeid. Disse praksisene henger tett sammen: de handler om å forstå materialer gjennom hendene.</p>
       </div>
-
       <div class="about-contact">
         <p class="contact-label">Kontakt</p>
         <p><a href="mailto:olasin@hotmail.no">olasin@hotmail.no</a></p>
         <p><a href="tel:+4747702996">+47 477 02 996</a></p>
         <p class="contact-label">Sted</p>
         <p>Trondheim, Norge</p>
-        <p>Tønsberg, Norge</p>
       </div>
     </div>
 
-    <!-- CV -->
-    <div class="cv-block">
-
+    <div class="cv-block reveal" data-delay="160">
       <div class="cv-section">
         <p class="cv-section-label">Nåværende stilling</p>
         <div class="cv-entry">
           <span class="cv-year">2025 –</span>
           <div>
-            <p class="cv-title">Prosektleder, EVU i Bygningsvern og Restaurering</p>
+            <p class="cv-title">Koordinator, EVU i Bygningsvern og Restaurering</p>
             <p class="cv-place">NTNU – Institutt for arkitektur og teknologi</p>
-            <p class="cv-desc">Pilotprosjekt for videreutdanning av håndverkere som arbeider med vernede og verneverdige bygg og kirker.</p>
-            <p class="cv-desc">Les om prosjektet her:<a href="https://www.universitetsavisa.no/fakultet-for-arkitektur-og-design-finansiering-nidaros-domkirkes-restaureringsarbeider/millionloft-for-et-av-ntnus-mest-unike-studietilbud/455685"> Universitetsavisa</a></p>
+            <p class="cv-desc">Pilotprosjekt for etterutdanning av håndverkere som arbeider med vernede og verneverdige bygg og kirker.</p>
           </div>
         </div>
       </div>
 
       <div class="cv-section">
         <p class="cv-section-label">Erfaring</p>
-
         <div class="cv-entry">
           <span class="cv-year">2024 – 2025</span>
           <div>
@@ -78,7 +63,6 @@
             <p class="cv-desc">Varierte håndverksarbeider i forbindelse med ferdigstilling av nybygget og oppussing av det gamle bygget.</p>
           </div>
         </div>
-
         <div class="cv-entry">
           <span class="cv-year">2022 – 2023</span>
           <div>
@@ -91,7 +75,6 @@
 
       <div class="cv-section">
         <p class="cv-section-label">Utdanning</p>
-
         <div class="cv-entry">
           <span class="cv-year">2018 – 2024</span>
           <div>
@@ -104,7 +87,6 @@
 
       <div class="cv-section">
         <p class="cv-section-label">Frivillig</p>
-
         <div class="cv-entry">
           <span class="cv-year">2021 –</span>
           <div>
@@ -123,14 +105,13 @@
       </div>
 
       <a class="cv-download" href="cv.pdf">Last ned fullstendig CV (PDF) ↓</a>
-
     </div>
-  </main>
+  </div>
 
   <footer>
     <p>Arkitekt Ola Singsdal — singsdal.no</p>
     <p>Oppdatert 2025</p>
   </footer>
-
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -10,47 +10,39 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <nav>
-    <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
-    <ul class="nav-links">
-      <li><a href="prosjekter.html">Prosjekter</a></li>
-      <li><a href="tekster.html" class="active">Tekster</a></li>
-      <li><a href="tegninger.html">Tegninger</a></li>
-      <li><a href="trearbeid.html">Trearbeid</a></li>
-      <li><a href="om.html">Om</a></li>
-    </ul>
+  <nav class="site-nav" id="sitenav">
+    <div class="site-nav-inner">
+      <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
+      <ul class="nav-links">
+        <li><a href="prosjekter.html">Prosjekter</a></li>
+        <li><a href="tekster.html" class="active">Tekster</a></li>
+        <li><a href="tegninger.html">Tegninger</a></li>
+        <li><a href="trearbeid.html">Trearbeid</a></li>
+        <li><a href="om.html">Om</a></li>
+      </ul>
+    </div>
   </nav>
-
-  <div class="page-header">
-    <h1>Tekster</h1>
-  </div>
-
-  <main>
+  <div class="page-wrap">
+    <div class="page-header reveal"><h1>Tekster</h1></div>
     <div class="texts-list">
-
-      <a class="text-entry" href="tekster/blyanten-og-handverket.html">
+      <a class="text-entry reveal" data-delay="0" href="tekster/blyanten-og-handverket.html">
         <span class="text-title">Blyanten og håndverket</span>
         <span class="text-year">2024</span>
       </a>
-
-      <a class="text-entry" href="#">
+      <a class="text-entry reveal" data-delay="60" href="#">
         <span class="text-title">Transformasjon som faglig kategori</span>
         <span class="text-year">2024</span>
       </a>
-
-      <a class="text-entry" href="#">
+      <a class="text-entry reveal" data-delay="120" href="#">
         <span class="text-title">Materialitet og håndverk i ombygging</span>
         <span class="text-year">2023</span>
       </a>
-
     </div>
-  </main>
-
+  </div>
   <footer>
     <p>Arkitekt Ola Singsdal — singsdal.no</p>
     <p>Oppdatert 2025</p>
   </footer>
-
+  <script src="js/main.js"></script>
 </body>
 </html>

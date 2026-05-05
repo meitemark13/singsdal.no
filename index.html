@@ -4,246 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arkitekt Ola Singsdal</title>
-  <meta name="description" content="Arbeid i skjæringspunktet mellom materialitet, form og håndverk." />
+  <meta name="description" content="Arkitekt basert i Trondheim. Arbeid i skjæringspunktet mellom materialitet, form og håndverk." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .hero {
-      padding: 3.5rem var(--col) 3rem;
+    .home-wrap {
       max-width: var(--max);
       margin: 0 auto;
+      padding: 4rem var(--col) 6rem;
       border-top: 1px solid var(--rule);
-    }
-
-    .hero p {
-      font-family: var(--serif);
-      font-size: clamp(1.4rem, 3.5vw, 2rem);
-      font-weight: 400;
-      line-height: 1.45;
-      max-width: 28ch;
-    }
-
-    .editorial {
-      padding: 0 var(--col) 5rem;
-      max-width: var(--max);
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    .ed-row {
       display: grid;
-      gap: 2rem 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 6rem;
+      align-items: start;
+    }
+
+    .home-intro p {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 26ch;
+    }
+
+    .home-nav-list {
+      list-style: none;
       border-top: 1px solid var(--rule);
-      padding-top: 2rem;
     }
 
-    .ed-row.layout-featured {
-      grid-template-columns: 1.6fr 1fr;
-      grid-template-rows: auto auto;
+    .home-nav-list li {
+      border-bottom: 1px solid var(--rule);
     }
 
-    .ed-row.layout-featured .ed-featured { grid-row: 1 / 3; }
-
-    .ed-row.layout-text { grid-template-columns: 1fr; }
-
-    .ed-category {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+    .home-nav-list a {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-    }
-
-    .ed-category a { color: var(--muted); text-decoration: none; transition: color 0.25s; }
-    .ed-category a:hover { color: var(--ink); }
-
-    .ed-item a { text-decoration: none; color: inherit; display: block; }
-
-    .ed-img {
-      width: 100%;
-      background: var(--rule);
-      overflow: hidden;
-      margin-bottom: 0.7rem;
-    }
-
-    .ed-img.ratio-landscape { aspect-ratio: 4 / 3; }
-    .ed-img.ratio-portrait  { aspect-ratio: 3 / 4; }
-    .ed-img.ratio-square    { aspect-ratio: 1 / 1; }
-
-    .ed-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      filter: grayscale(100%);
-      transition: filter 0.5s var(--ease);
-    }
-
-    .ed-item:hover .ed-img img { filter: grayscale(0%); }
-
-    .ed-img.empty {
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .ed-img.empty span {
-      font-family: var(--serif); font-size: 2.5rem;
-      color: var(--muted); opacity: 0.25;
-    }
-
-    .ed-title {
-      font-family: var(--serif);
-      font-size: 1rem; font-weight: 400; line-height: 1.3; margin-bottom: 0.2rem;
-    }
-
-    .ed-featured .ed-title { font-size: 1.25rem; }
-
-    .ed-meta { font-size: 0.72rem; color: var(--muted); }
-
-    .ed-text-list { display: flex; flex-direction: column; }
-
-    .ed-text-entry {
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: baseline; gap: 1rem;
-      padding: 0.85rem 0; border-bottom: 1px solid var(--rule);
-      text-decoration: none; color: inherit;
-    }
-
-    .ed-text-entry:first-child { border-top: 1px solid var(--rule); }
-    .ed-text-entry:hover .ed-text-title { color: var(--accent); }
-
-    .ed-text-title {
-      font-family: var(--serif); font-size: 1rem; font-weight: 400;
+      padding: 0.9rem 0;
+      text-decoration: none;
+      color: inherit;
       transition: color 0.25s;
     }
 
-    .ed-text-year { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .home-nav-list a:hover { color: var(--accent); }
 
-    @media (max-width: 640px) {
-      .ed-row.layout-featured { grid-template-columns: 1fr; }
-      .ed-row.layout-featured .ed-featured { grid-row: auto; }
+    .home-nav-list .hn-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .home-nav-list .hn-arrow {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: transform 0.25s, color 0.25s;
+    }
+
+    .home-nav-list a:hover .hn-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .home-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
-    <ul class="nav-links">
-      <li><a href="prosjekter.html">Prosjekter</a></li>
-      <li><a href="tekster.html">Tekster</a></li>
-      <li><a href="tegninger.html">Tegninger</a></li>
-      <li><a href="trearbeid.html">Trearbeid</a></li>
-      <li><a href="om.html">Om</a></li>
-    </ul>
+  <nav class="site-nav" id="sitenav">
+    <div class="site-nav-inner">
+      <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
+      <ul class="nav-links">
+        <li><a href="prosjekter.html">Prosjekter</a></li>
+        <li><a href="tekster.html">Tekster</a></li>
+        <li><a href="tegninger.html">Tegninger</a></li>
+        <li><a href="trearbeid.html">Trearbeid</a></li>
+        <li><a href="om.html">Om</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <div class="hero reveal">
-    <p>Arbeid i skjæringspunktet mellom materialitet, form og håndverk.</p>
-  </div>
+  <div class="home-wrap">
 
-  <div class="editorial">
-
-    <div class="ed-row layout-featured reveal" data-delay="100">
-      <div class="ed-category" style="grid-column: 1 / -1;">
-        <span>Prosjekter</span>
-        <a href="prosjekter.html">Se alle</a>
-      </div>
-      <div class="ed-item ed-featured">
-        <a href="prosjekter.html">
-          <div class="ed-img ratio-portrait empty"><span>·</span></div>
-          <p class="ed-title">Prosjekttittel</p>
-          <p class="ed-meta">Sted — 2024</p>
-        </a>
-      </div>
-      <div class="ed-item">
-        <a href="prosjekter.html">
-          <div class="ed-img ratio-landscape empty"><span>·</span></div>
-          <p class="ed-title">Prosjekttittel</p>
-          <p class="ed-meta">Sted — 2023</p>
-        </a>
-      </div>
-      <div class="ed-item">
-        <a href="prosjekter.html">
-          <div class="ed-img ratio-landscape empty"><span>·</span></div>
-          <p class="ed-title">Prosjekttittel</p>
-          <p class="ed-meta">Sted — 2022</p>
-        </a>
-      </div>
+    <div class="home-intro reveal">
+      <p>Arbeid i skjæringspunktet mellom materialitet, form og håndverk.</p>
     </div>
 
-    <div class="ed-row layout-text reveal" data-delay="100">
-      <div class="ed-category">
-        <span>Tekster</span>
-        <a href="tekster.html">Se alle</a>
-      </div>
-      <div class="ed-text-list">
-        <a class="ed-text-entry" href="tekster/blyanten-og-handverket.html">
-          <span class="ed-text-title">Blyanten og håndverket</span>
-          <span class="ed-text-year">2024</span>
+    <nav class="home-nav-list reveal" data-delay="120" aria-label="Kategorier">
+      <li>
+        <a href="prosjekter.html">
+          <span class="hn-title">Prosjekter</span>
+          <span class="hn-arrow">→</span>
         </a>
-        <a class="ed-text-entry" href="tekster.html">
-          <span class="ed-text-title">Transformasjon som faglig kategori</span>
-          <span class="ed-text-year">2024</span>
+      </li>
+      <li>
+        <a href="tekster.html">
+          <span class="hn-title">Tekster</span>
+          <span class="hn-arrow">→</span>
         </a>
-        <a class="ed-text-entry" href="tekster.html">
-          <span class="ed-text-title">Materialitet og håndverk i ombygging</span>
-          <span class="ed-text-year">2023</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="ed-row layout-featured reveal" data-delay="100">
-      <div class="ed-category" style="grid-column: 1 / -1;">
-        <span>Tegninger</span>
-        <a href="tegninger.html">Se alle</a>
-      </div>
-      <div class="ed-item ed-featured">
+      </li>
+      <li>
         <a href="tegninger.html">
-          <div class="ed-img ratio-portrait">
-            <img src="img/singsdalen-blyant-og-akvarell.jpg" alt="Singsdalen" />
-          </div>
-          <p class="ed-title">Singsdalen</p>
-          <p class="ed-meta">Blyant og akvarell — 2025</p>
+          <span class="hn-title">Tegninger</span>
+          <span class="hn-arrow">→</span>
         </a>
-      </div>
-      <div class="ed-item">
-        <a href="tegninger.html">
-          <div class="ed-img ratio-landscape">
-            <img src="img/kontoret-3-blekk-og-fargeblyant.jpg" alt="Kontoret 3" />
-          </div>
-          <p class="ed-title">Kontoret 3</p>
-          <p class="ed-meta">Blekk og fargeblyant — 2025</p>
-        </a>
-      </div>
-      <div class="ed-item">
-        <a href="tegninger.html">
-          <div class="ed-img ratio-landscape">
-            <img src="img/andre-fargeblyant.jpg" alt="André, konsentert" />
-          </div>
-          <p class="ed-title">André, konsentert</p>
-          <p class="ed-meta">Fargeblyant — 2024</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="ed-row layout-text reveal" data-delay="100">
-      <div class="ed-category">
-        <span>Trearbeid</span>
-        <a href="trearbeid.html">Se alle</a>
-      </div>
-      <div class="ed-item">
+      </li>
+      <li>
         <a href="trearbeid.html">
-          <div class="ed-img ratio-landscape empty"><span>·</span></div>
-          <p class="ed-title">Dreiet skål</p>
-          <p class="ed-meta">Bjørk — 2024</p>
+          <span class="hn-title">Trearbeid</span>
+          <span class="hn-arrow">→</span>
         </a>
-      </div>
-    </div>
+      </li>
+      <li>
+        <a href="om.html">
+          <span class="hn-title">Om</span>
+          <span class="hn-arrow">→</span>
+        </a>
+      </li>
+    </nav>
 
   </div>
 
