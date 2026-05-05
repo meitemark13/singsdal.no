@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singsdal</title>
+  <meta name="description" content="Arkitekt. Tegninger, trearbeider og tekster." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #F5F2EC;
+      --ink:      #2A2620;
+      --muted:    #7A7368;
+      --rule:     #D6D0C4;
+      --accent:   #8C6D4F;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'Karla', system-ui, sans-serif;
+      --max:      860px;
+      --col:      clamp(1.5rem, 5vw, 4rem);
+    }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ─────────────────────────────── */
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--col);
+    }
+
+    /* ── Nav ─────────────────────────────────── */
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 2.5rem var(--col) 2rem;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── Header ──────────────────────────────── */
+
+    header {
+      padding: 5rem var(--col) 4rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      border-top: 1px solid var(--rule);
+    }
+
+    header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      max-width: 14ch;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    header p {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 40ch;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Section ─────────────────────────────── */
+
+    section {
+      padding: 4rem var(--col);
+      max-width: var(--max);
+      margin: 0 auto;
+      border-top: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Portfolio grid ──────────────────────── */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem 2.5rem;
+    }
+
+    .item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .item-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--rule);
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+
+    .item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .item:hover .item-img img { opacity: 0.88; }
+
+    /* Placeholder when no image */
+    .item-img.empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item-img.empty span {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--muted);
+      opacity: 0.4;
+    }
+
+    .item-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Texts list ──────────────────────────── */
+
+    .texts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .text-entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .text-entry:first-child { border-top: 1px solid var(--rule); }
+    .text-entry:hover .text-title { color: var(--accent); }
+
+    .text-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .text-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── About ───────────────────────────────── */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .about-bio {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .about-bio p + p { margin-top: 1em; }
+
+    .about-contact {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .about-contact p { margin-bottom: 0.4em; }
+
+    .about-contact a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s;
+    }
+
+    .about-contact a:hover { border-color: var(--ink); }
+
+    .about-contact .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── Footer ──────────────────────────────── */
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem var(--col);
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Responsive ──────────────────────────── */
+
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .text-entry { grid-template-columns: 1fr; }
+      .text-meta { display: none; }
+      nav { flex-direction: column; gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="#">Singsdal</a>
+    <ul class="nav-links">
+      <li><a href="#tegninger">Tegninger</a></li>
+      <li><a href="#trearbeid">Trearbeid</a></li>
+      <li><a href="#tekster">Tekster</a></li>
+      <li><a href="#om">Om</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Arkitekt.<br /><em>Tegner.</em><br />Håndverker.</h1>
+    <p>Arbeid i skjæringspunktet mellom materialitet, fagkunnskap og bygningskultur.</p>
+  </header>
+
+  <!-- ── Drawings ── -->
+  <section id="tegninger">
+    <p class="section-label">Tegninger</p>
+    <div class="grid">
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <!-- Replace with: <div class="item-img"><img src="img/tegning-01.jpg" alt="..." /></div> -->
+          <p class="item-title">Tittel på tegning</p>
+          <p class="item-meta">Blyant på papir — 2024</p>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <p class="item-title">Perspektivstudie</p>
+          <p class="item-meta">Tusj — 2023</p>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <p class="item-title">Snitt og detalj</p>
+          <p class="item-meta">Blekk — 2023</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Woodworking ── -->
+  <section id="trearbeid">
+    <p class="section-label">Trearbeid</p>
+    <div class="grid">
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <p class="item-title">Dreiet skål</p>
+          <p class="item-meta">Bjørk — 2024</p>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <p class="item-title">Liten boks</p>
+          <p class="item-meta">Furu — 2024</p>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="#">
+          <div class="item-img empty"><span>·</span></div>
+          <p class="item-title">Vase</p>
+          <p class="item-meta">Ask — 2023</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Texts ── -->
+  <section id="tekster">
+    <p class="section-label">Tekster</p>
+    <div class="texts-list">
+
+      <a class="text-entry" href="#">
+        <span class="text-title">Transformasjon som faglig kategori</span>
+        <span class="text-meta">2024</span>
+      </a>
+
+      <a class="text-entry" href="#">
+        <span class="text-title">Materialitet og håndverk i ombygging</span>
+        <span class="text-meta">2023</span>
+      </a>
+
+      <a class="text-entry" href="#">
+        <span class="text-title">Bygningsarv uten bevaring</span>
+        <span class="text-meta">2022</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="om">
+    <p class="section-label">Om</p>
+    <div class="about-grid">
+
+      <div class="about-bio">
+        <p>
+          Jeg er arkitekt og arbeider med spørsmål om materialitet, håndverk og bygningers forandring over tid.
+          Til daglig er jeg tilknyttet NTNU, der jeg underviser og forsker på eldre bygningsmasse og faglig opplæring innen bygningsvern.
+        </p>
+        <p>
+          Ved siden av det faglige arbeider jeg med tegning og trearbeid — særlig dreierarbeid.
+          Disse praksisene henger tett sammen: de handler om å forstå materialer gjennom hendene.
+        </p>
+      </div>
+
+      <div class="about-contact">
+        <p class="contact-label">Kontakt</p>
+        <p><a href="mailto:ola@singsdal.no">ola@singsdal.no</a></p>
+
+        <p class="contact-label">CV</p>
+        <p><a href="cv.pdf">Last ned CV</a></p>
+
+        <p class="contact-label">Lokasjon</p>
+        <p>Trondheim, Norge</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Singsdal — singsdal.no</p>
+    <p>Oppdatert 2025</p>
+  </footer>
+
+</body>
+</html>
