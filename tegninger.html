@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tegninger — Ola Singsdal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .drawing-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .drawing-group {
+      border-top: 1px solid var(--rule);
+      padding-top: 2rem;
+    }
+
+    .drawing-group-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .drawing-group-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+    }
+
+    .drawing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .drawing-grid.single {
+      grid-template-columns: minmax(0, 480px);
+    }
+
+    .drawing-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .drawing-grid { grid-template-columns: 1fr; }
+      .drawing-grid.single { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Arkitekt Ola Singsdal</a>
+    <ul class="nav-links">
+      <li><a href="prosjekter.html">Prosjekter</a></li>
+      <li><a href="tekster.html">Tekster</a></li>
+      <li><a href="tegninger.html" class="active">Tegninger</a></li>
+      <li><a href="trearbeid.html">Trearbeid</a></li>
+      <li><a href="om.html">Om</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Tegninger</h1>
+  </div>
+
+  <main>
+    <div class="drawing-groups">
+
+      <!-- Kontoret -->
+      <div class="drawing-group">
+        <h2 class="drawing-group-title">Kontoret</h2>
+        <p class="drawing-group-meta">Blekk, tusj, blyant, fargeblyant — 2025</p>
+        <div class="drawing-grid">
+          <div class="drawing-item">
+            <img src="img/kontoret-1-blekk-og-tusj.jpg" alt="Kontoret — blekk og tusj" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/kontoret-1-blyant.jpg" alt="Kontoret — blyant" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/kontoret-2-blyant-og-blekk.png" alt="Kontoret — blyant og blekk" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/kontoret-3-blekk-og-fargeblyant.jpg" alt="Kontoret — blekk og fargeblyant" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/kontoret-3-blekk.jpg" alt="Kontoret — blekk" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/kontoret-4-fargeblyant-og-blekk.jpg" alt="Kontoret — fargeblyant og blekk" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tegnesalen -->
+      <div class="drawing-group">
+        <h2 class="drawing-group-title">Tegnesalen</h2>
+        <p class="drawing-group-meta">Blekk og fargeblyant, blyant — 2024</p>
+        <div class="drawing-grid">
+          <div class="drawing-item">
+            <img src="img/tegnesalen-1-blekk-og-fargeblyant.jpg" alt="Tegnesalen — blekk og fargeblyant" />
+          </div>
+          <div class="drawing-item">
+            <img src="img/tegnesalen-2.jpg" alt="Tegnesalen — blyant" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Singsdalen -->
+      <div class="drawing-group">
+        <h2 class="drawing-group-title">Singsdalen</h2>
+        <p class="drawing-group-meta">Blyant og akvarell — 2025</p>
+        <div class="drawing-grid single">
+          <div class="drawing-item">
+            <img src="img/singsdalen-blyant-og-akvarell.jpg" alt="Singsdalen — blyant og akvarell" />
+          </div>
+        </div>
+      </div>
+
+      <!-- André -->
+      <div class="drawing-group">
+        <h2 class="drawing-group-title">André, konsentert</h2>
+        <p class="drawing-group-meta">Fargeblyant — 2024</p>
+        <div class="drawing-grid single">
+          <div class="drawing-item">
+            <img src="img/andre-fargeblyant.jpg" alt="André, konsentert — fargeblyant" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Februar -->
+      <div class="drawing-group">
+        <h2 class="drawing-group-title">Februar</h2>
+        <p class="drawing-group-meta">Fargeblyant — 2024</p>
+        <div class="drawing-grid single">
+          <div class="drawing-item">
+            <img src="img/februar.jpg" alt="Februar — fargeblyant" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Arkitekt Ola Singsdal — singsdal.no</p>
+    <p>Oppdatert 2025</p>
+  </footer>
+
+</body>
+</html>
