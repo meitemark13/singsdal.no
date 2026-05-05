@@ -117,3 +117,15 @@
   .project-body { grid-template-columns: 1fr; gap: 2rem; }
   .project-meta-row { flex-wrap: wrap; gap: 1rem; }
 }
+
+/* On project pages, images are always in color */
+.project-img,
+.project-img-full {
+  filter: grayscale(0%) !important;
+  transition: opacity 0.3s;
+}
+
+.project-img:hover,
+.project-img-full:hover {
+  opacity: 0.92;
+}
