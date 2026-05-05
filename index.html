@@ -13,20 +13,21 @@
     .home-wrap {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4rem var(--col) 6rem;
+      padding: 5rem var(--col) 7rem;
       border-top: 1px solid var(--rule);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem 6rem;
+      gap: 4rem 8rem;
       align-items: start;
     }
 
     .home-intro p {
       font-family: var(--serif);
-      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
       font-weight: 400;
-      line-height: 1.5;
-      max-width: 26ch;
+      line-height: 1.55;
+      color: var(--ink);
+      max-width: 24ch;
     }
 
     .home-nav-list {
@@ -68,7 +69,7 @@
     }
 
     @media (max-width: 720px) {
-      .home-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .home-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem var(--col) 5rem; }
     }
   </style>
 </head>
@@ -88,44 +89,17 @@
   </nav>
 
   <div class="home-wrap">
-
     <div class="home-intro reveal">
       <p>Arbeid i skjæringspunktet mellom materialitet, form og håndverk.</p>
     </div>
 
-    <nav class="home-nav-list reveal" data-delay="120" aria-label="Kategorier">
-      <li>
-        <a href="prosjekter.html">
-          <span class="hn-title">Prosjekter</span>
-          <span class="hn-arrow">→</span>
-        </a>
-      </li>
-      <li>
-        <a href="tekster.html">
-          <span class="hn-title">Tekster</span>
-          <span class="hn-arrow">→</span>
-        </a>
-      </li>
-      <li>
-        <a href="tegninger.html">
-          <span class="hn-title">Tegninger</span>
-          <span class="hn-arrow">→</span>
-        </a>
-      </li>
-      <li>
-        <a href="trearbeid.html">
-          <span class="hn-title">Trearbeid</span>
-          <span class="hn-arrow">→</span>
-        </a>
-      </li>
-      <li>
-        <a href="om.html">
-          <span class="hn-title">Om</span>
-          <span class="hn-arrow">→</span>
-        </a>
-      </li>
-    </nav>
-
+    <ul class="home-nav-list reveal" data-delay="120">
+      <li><a href="prosjekter.html"><span class="hn-title">Prosjekter</span><span class="hn-arrow">→</span></a></li>
+      <li><a href="tekster.html"><span class="hn-title">Tekster</span><span class="hn-arrow">→</span></a></li>
+      <li><a href="tegninger.html"><span class="hn-title">Tegninger</span><span class="hn-arrow">→</span></a></li>
+      <li><a href="trearbeid.html"><span class="hn-title">Trearbeid</span><span class="hn-arrow">→</span></a></li>
+      <li><a href="om.html"><span class="hn-title">Om</span><span class="hn-arrow">→</span></a></li>
+    </ul>
   </div>
 
   <footer>
